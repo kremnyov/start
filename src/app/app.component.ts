@@ -11,16 +11,14 @@ export class AppComponent  {
 
   users = [];
 
-  constructor(private usersServive: UsersService) {}
+  constructor(private usersService: UsersService) {}
 
   ngOnInit () {
-    //this.users = this.usersServive.users
-    this.usersServive.gerUsers().subscribe(users => {
-      this.users = users
+    //this.users = this.usersService.users
+    this.usersService.getUsers().subscribe(users =>  {
 
+      this.users = users)
     })
   }
-
-
 }
 
