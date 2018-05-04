@@ -7,17 +7,17 @@ import {UsersService} from "./user.service";
   styleUrls: ['./app.component.scss'],
   providers: [UsersService]
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
 
   users = [];
 
   constructor(private usersService: UsersService) {}
 
   ngOnInit () {
-    //this.users = this.usersService.users
+
     this.usersService.getUsers().subscribe(users =>  {
 
-      this.users = users)
+      this.users = users
     })
   }
 }
